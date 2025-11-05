@@ -1,4 +1,3 @@
-/* sensible global reset to avoid overflow caused by padding/width combos */
 *, *::before, *::after {
     box-sizing: border-box;
 }
@@ -7,7 +6,8 @@ html, body {
     margin: 0;
     padding: 0;
     width: 100%;
-    overflow-x: hidden; /* prevents horizontal scroll from overflow */
+    overflow-x: hidden; 
+    color: white;
 }
 
 body{
@@ -112,6 +112,18 @@ backdrop-filter: blur(10px);
     margin-top: 5px;
 }
 
+#list-show{
+    border: 1px solid gray;
+    background-color: transparent;
+    border-radius: 5px;
+    color: white;
+    display: none;
+    /* display: inline; */
+}
+
+/* search screen */
+
+
 /* hover divs */
 .tv-show,.sports-show,.Movies{
    position: absolute;
@@ -172,12 +184,18 @@ backdrop-filter: blur(10px);
 .cards-list{
    /* height: 2050px; */
     height: 10em;
-   width: 100%;
+   width:auto;
    position: relative;
    top: 40px !important;
    padding: 0 50;
    margin-left: 7em;
-}
+    overflow-x: auto;
+    overflow-y: hidden;
+     display: flex;
+     gap: 1em;
+}   
+
+
 .cards-list img{
     width: 120px;
     display: inline-block;
@@ -236,16 +254,22 @@ backdrop-filter: blur(10px);
     color: inherit;
     font-size: 13px;
 }
+.user_table{
+    background-color: #1f1e1e;
+}
 .user_box .user_table td {
-    padding: 8px 12px;
+    /* compact row spacing */
+    /* padding: 4px 8px;  */
     vertical-align: middle;
-    line-height: 1.15;
+    /* line-height: 1; tighter line-height reduces cell height */
+    height: 1px; 
     color: #f3f3f3;
+    font-size: 13px;
 }
 .user_box .user_table img {
     display: block;
-    width: 20px;
-    height: 20px;
+    width: 18px; /* slightly smaller icons to match compact rows */
+    height: 18px;
     object-fit: contain;
 }
 .user_box .user_head img {
@@ -281,7 +305,7 @@ backdrop-filter: blur(10px);
 
 /* first column icon alignment */
 .user_box .user_table td:first-child {
-    width: 48px;
+    width: 40px; /* narrower first column for compact layout */
     text-align: center;
     padding-left: 6px;
 }
@@ -289,7 +313,7 @@ backdrop-filter: blur(10px);
 /* make the header row look like the reference */
 .user_box .user_head {
     display: flex;
-    gap: 12px;
+    /* gap: 12px; */
     align-items: center;
 }
 
@@ -304,8 +328,8 @@ backdrop-filter: blur(10px);
     display: inline-block;
     top: 0;
     left: 0;
-    width: 120px;
-    height: 180px;
+    min-width: 120px;
+    height: 200px;
     background:url(https://images.slivcdn.com/videoasset_images/blitz_assets/1700001266/portraitThumb/1761213086685_./IGT2025_2_Portrait_Thumb_SP_2.jpg?h=494&w=344&q=high); 
     background-size: cover;
     border-radius: 10px;
@@ -315,8 +339,8 @@ backdrop-filter: blur(10px);
     display: inline-block;
     top: 0;
     left: 0;
-    width: 120px;
-    height: 180px;
+    min-width: 120px;
+    height: 200px;
     background:url(https://images.slivcdn.com/portrait_thumb/Satya_rev_portrait_thumb.jpg?h=494&w=344&q=high); 
     background-size: cover;
     border-radius: 10px;
@@ -326,8 +350,8 @@ backdrop-filter: blur(10px);
     display: inline-block;
     top: 0;
     left: 0;
-    width: 120px;
-    height: 180px;
+    min-width: 120px;
+    height: 200px;
     background:url(https://images.slivcdn.com/videoasset_images/manage_file/1000008007/1757599136000857_UCL25_26_GOB_1_Portrait_Thumb.jpg?h=494&w=344&q=high); 
     background-size: cover;
     border-radius: 10px;
@@ -373,7 +397,7 @@ backdrop-filter: blur(10px);
     /* width: 300px; */
     position: relative;
     height: auto;
-    top:150px;
+    top:100px;
     
 }
 
@@ -381,7 +405,7 @@ backdrop-filter: blur(10px);
   -webkit-mask-image: linear-gradient(to bottom, rgb(43, 42, 42) 80%, transparent 100%);
   mask-image: linear-gradient(to bottom, rgb(43, 42, 42) 80%, transparent 100%);
 }
- .carousel-caption .dot {
+ .dot {
     height: 5px;
     width: 5px;
     background-color: #ffc900;
@@ -438,12 +462,12 @@ backdrop-filter: blur(10px);
 .card-slider{
     margin-left: 3em;
     margin-top: 1em;
-    margin-bottom: 3em !important;
+    /* margin-bottom: 3em !important; */
     height: 300px;
     display: flex;
     overflow-x: auto;
     gap: 1em;
-    padding-bottom: 1em;
+    /* padding-bottom: 1em; */
 }
 
 .trend-card
@@ -470,7 +494,10 @@ backdrop-filter: blur(10px);
     font-weight: 700;   ;
     left: 20px;
     font-size: 150px;
-    top: 80px;
+    align-content: end;
+    /* top: 80px; */
+    /* bottom: -50px; */
+    margin-bottom: 0;
     /* margin-left: 2em; */
     z-index: 4;
 }
@@ -483,7 +510,7 @@ backdrop-filter: blur(10px);
 .stream-card{
     position: relative;
     display: inline-block;
-    width: 400px;
+    min-width: 400px;
     height: 200px;
     background:url(https://images.slivcdn.com/videoasset_images/bolt_assets/landscape_thumb/1761142561565_1760480819531_1760463937929343_TMKOC_Channel_14oct_landscape_thumb.jpg?h=270&w=482&q=high); 
     background-size: cover;
@@ -518,7 +545,7 @@ backdrop-filter: blur(10px);
 {
      position: relative;
     display: flex;
-    width:180px;
+    min-width:180px;
     height: 250px;
     background:url(https://images.slivcdn.com/videoasset_images/manage_file/1000010048/1760025834685167_AsiaCup_Glory_24x7_portrait_thumb_9OCT.jpg?h=494&w=344&q=high); 
     background-size: cover;
@@ -530,7 +557,7 @@ backdrop-filter: blur(10px);
 {
      position: relative;
     display: flex;
-    width:180px;
+    min-width:180px;
     height: 250px;
     background:url(https://images.slivcdn.com/portrait_thumb/MahabaliHanuman_Portrait_Thumb.jpg?h=494&w=344&q=high); 
     background-size: cover;
@@ -543,7 +570,11 @@ backdrop-filter: blur(10px);
     background: url(https://images.slivcdn.com/videoasset_images/bolt_assets/bgImgWeb/1760170358944_watch_free_tray_bg_web.jpg?q=high);
     background-size: cover;
     display: flex;
-
+    align-items: center;
+}
+.diwali-offer h4{
+    position: relative;
+   
 }
 
 
@@ -552,7 +583,7 @@ backdrop-filter: blur(10px);
 .card-diwali{
       position: relative;
     display: flex;
-    width:180px;
+   min-width:180px;
     height: 250px;
     background:url(https://images.slivcdn.com/videoasset_images/manage_file/1000007048/1756219398307773_Bramayugam_26aug_portrait_thumb.jpg?h=494&w=344&q=high); 
     background-size: cover;
@@ -564,7 +595,7 @@ backdrop-filter: blur(10px);
 .card-reality{
       position: relative;
     display: flex;
-    width:180px;
+   min-width:180px;
     height: 250px;
     background:url(https://images.slivcdn.com/videoasset_images/tkss_2022_23_portrait_thumb2.jpg?h=494&w=344&q=high); 
     background-size: cover;
@@ -574,7 +605,7 @@ backdrop-filter: blur(10px);
 .card-regi{
       position: relative;
     display: flex;
-    width:180px;
+  min-width:180px;
     height: 250px;
     background:url(https://images.slivcdn.com/videoasset_images/gullak_26june_portrait_thumb.jpg?h=494&w=344&q=high); 
     background-size: cover;
@@ -585,7 +616,7 @@ backdrop-filter: blur(10px);
 .card-upcoming{
       position: relative;
     display: flex;
-    width:180px;
+    min-width:180px;
     height: 250px;
     background:url(https://images.slivcdn.com/videoasset_images/blitz_assets/1090491986/portraitThumb/1759997398896_./MaharaniS4_2_Portrait_Thumb_Dated_1.jpg?h=494&w=344&q=high); 
     background-size: cover;
@@ -596,7 +627,7 @@ backdrop-filter: blur(10px);
 .card-prew{
         position: relative;
         display: flex;
-        width:180px;
+        min-width:180px;
         height: 250px;
         background:url(https://images.slivcdn.com/videoasset_images/bolt_assets/portrait_thumb/1753366227680_1744627166382337_bougainvillea_14apr25_portrait_thumb.jpg?h=474&w=316&q=high); 
         background-size: cover;
@@ -607,7 +638,7 @@ backdrop-filter: blur(10px);
 .card-more{
         position: relative;
         display: flex;
-        width:220px;
+        min-width:220px;
         height: 200px;
         background:url(https://images.slivcdn.com/videoasset_images/bolt_assets/squareThumb/1757575045066_1757524366000321_Action_Packed_Hits_11sep25_square_thumb.jpg?h=344&w=344&q=high); 
         background-size: cover;
@@ -618,7 +649,7 @@ backdrop-filter: blur(10px);
 .card-talent{
     position: relative;
     display: inline-block;
-    width: 400px;
+    min-width: 400px;
     height: 200px;
     background:url(https://images.slivcdn.com/videoasset_images/bolt_assets/landscape_thumb/1760164692985_1760078608000309_IGT_First_Live_Audition_10oct_landscape_thumb.jpg?h=270&w=482&q=high); 
     background-size: cover;
@@ -627,6 +658,244 @@ backdrop-filter: blur(10px);
     margin-right: 0.5em;
     margin-top: 2em;
 }
+
+
+/* sub.html */
+.head-sub button{
+    font-size:xx-small;height: 20px; border: 1px solid white;background-color: rgba(255, 255, 255, 0.138); color: aliceblue; float: right; margin: 2em 4em; border-radius: 10px;width: 6em;
+}
+.head-sub .scroller{
+    height: 150px;
+    display: flex;
+    position: absolute;
+    z-index: -1;
+    top:0;
+    left: 0;
+    overflow-y: hidden;
+    overflow-x: visible;
+    animation-name: scroller;
+    animation-duration: 15s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  mask-image: linear-gradient(to bottom, rgb(0, 0, 0), transparent);
+}
+
+.scroller img{
+    border-radius: 10px;
+     mask-image: linear-gradient(to bottom, rgb(0, 0, 0), transparent);
+    padding: 5px;
+    cursor: pointer;
+}
+
+
+@keyframes scroller {
+   0% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(-15%);
+  }
+  40%{
+     transform: translateX(-30%);
+  }
+}
+
+
+.main-box{
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    /* margin: 5em; */
+}
+
+
+
+/* Bottombar */
+
+.bottombar{
+    width: 100%;
+    height: auto;
+    background-color: #00000073;
+    margin-top: 1em;
+    padding: 1em;
+}
+
+.bottom-card{
+    display: inline;
+    height: auto;
+    width: 250px;
+    /* border: 4px solid white; */
+    justify-content: center;
+    line-height: 30px;
+    padding: 1em;
+}
+
+.bottom-card th,td{
+    color: rgb(255, 255, 255);
+        justify-content: center;
+        text-align:center;
+     /* display: block !important; */
+}
+
+.bottom-card a{
+    text-decoration: none;
+     color: rgb(167, 166, 166);
+     font-size: small;
+}
+
+.ex-bottom-tab{
+    margin: 3em;
+}
+
+.term
+{
+    display: inline;
+    color: white;
+    padding: 2em;
+}
+.term p{
+    margin-left: 2em;
+}
+.term a{
+    text-decoration: none;
+    color: #fff;
+}
+
+.ex_button{
+    display: inline;
+    float: right;
+    margin-top: -2em;
+}
+
+.ex_button span{
+    color: #fff;
+    position: relative;
+    top:-2em;
+    left:7em;
+    width: 1em;
+}
+
+
+.headerofacton{
+    padding: 4em;
+    color: white;
+}
+
+.headerofacton h1{
+    color: goldenrod;
+}
+/* tabel */
+
+
+
+.sub-container {
+  width: 85%;
+  margin: 3em auto;
+}
+
+.sub-container h2 {
+  margin-bottom: 1.5em;
+  font-weight: normal;
+}
+
+.table-container {
+  overflow-x: auto;
+}
+
+.sub-table {
+  width: 80%;
+  border-collapse: collapse;
+  margin: 2em;
+  /* height: 100px; */
+  margin-left: 10em;
+}
+
+.sub-table th,
+.sub-table td {
+  border: 1px solid #333;
+  padding: 15px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.sub-table th {
+  background-color: #111;
+}
+
+.highlight input[type="radio"] 
+{
+   accent-color: black;
+}
+.sub-table th span {
+  display: block;
+  color: #ffcc00;
+  font-size: 13px;
+}
+.sub-table span{
+    color: yellow;
+}
+
+.sub-table td:first-child {
+  text-align: left;
+  width: 25%;
+  background-color: #0c0c0c;
+}
+
+.sub-table .highlight {
+  background-color: #ffcc00;
+  color: #000;
+  font-weight: bold;
+}
+
+.sub-table .highlight span {
+  color: #000;
+}
+
+.promo p {
+  color: #aaa;
+  font-size: 13px;
+  margin-bottom: 1em;
+  border-bottom: 1px dotted #555;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+.pay-btn {
+  background-color: #ffcc00;
+  color: #000;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  padding: 12px 40px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.pay-btn:hover {
+  background-color: #ffd633;
+}
+
+.footer-links {
+  margin-top: 2em;
+  font-size: 13px;
+  color: #bbb;
+}
+
+.footer-links a {
+  color: #bbb;
+  text-decoration: none;
+  margin: 0 5px;
+}
+
+.footer-links a:hover {
+  color: #fff;
+}
+
+
+
+/* sigin.html */
+
+
 
 /* hover effects */
 
@@ -671,7 +940,7 @@ p:hover{
     transform: scale(1.1);
     transition: transform 0.3s;
 }
-#user_icon:hover .user_box{
+#user_icon img:hover .user_box{
     display: block;
 }
 .sports-show-card:hover{
@@ -756,3 +1025,33 @@ p:hover{
     transform: scale(1.1);
     transition: transform 0.3s;
 }
+
+.bottom-card a:hover{
+    color: white;
+}
+
+.term p:hover
+{
+    transform: scale(1);
+}
+.ex_button img:hover{
+    transform: scale(1.05);
+    transition: transform 0.3s;
+}
+.headerofacton:hover{
+    transform: scale(1.03);
+    transition: transform 0.3s;
+}
+.sigin-box p:hover{
+    transform: none;
+}
+.sigin-box a:hover{
+    color: white;
+}
+#email-card:hover{
+  transform: scale(1.1);
+  transition: transform 0.3s;
+}
+
+
+

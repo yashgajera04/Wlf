@@ -1,0 +1,353 @@
+/* medi query */
+@media (max-width: 1045px) {
+  
+    .logo img{
+        margin-left: 10px;
+        margin-top: 0;
+    }
+
+    .nav-links li{
+          margin-right: 5px;
+         margin-left: 5PX;
+    }
+    .user-actions{
+    margin-right: 10px;
+    margin-top: 5px;
+    }
+    .carousel-caption{
+        top: 50px;
+    }
+    .othercard{
+        left: 30% !important;
+
+    }
+    .sub-table{
+        margin-left: 2em;
+    }
+}
+
+@media (max-width: 1080px) {
+  
+    nav{
+        margin-left: 0px;
+        padding: 10px;
+    }
+    .logo img{
+        margin-left: 0px;
+        margin-top: 0;
+    }
+
+    .nav-links li{
+          margin-right: 2px;
+         margin-left: 2px;
+    }
+    
+     .nav-links a{
+        margin: 5px;
+        font-size: 15px;
+        font-weight: 450;
+    }
+    .sub-btn
+    {
+             margin-left: 0px !important;
+    }
+    .user-actions{
+    margin-right: 10px;
+    margin-top: 5px;
+    }
+    .carousel-caption{
+        top: 0px;
+    }
+    #clos_btn{
+        top:-110px !important;
+        left: 700px;
+     }
+
+}
+
+@media (max-width: 875px) {
+    nav{
+        margin-left: 0px;
+         padding: 5px;
+    }
+  
+    .nav-links a{
+        margin: 0px;
+        font-size: 10.5px;
+        font-weight: 450;
+    }
+    .vl{
+         margin-left: 5px;
+    }
+
+    .carousel-caption {
+        float: left;
+    }
+    .carousel-caption #mask-img{
+        float: left;
+       width: 300px;
+       height: 200px ;
+    }
+     .nav-links li#tvsh:hover .tv-show{
+        display: none;
+    }
+    .nav-links li#Sports:hover .sports-show{
+        display: none;
+    }
+    .nav-links li#Movies:hover .Movies{
+        display: none;
+
+    }
+    .outer-trend-card{
+        margin: auto 20px;
+        min-width: 130px;
+        height: 200px; ;
+    }
+    .inner-trend-card{
+         font-weight: 600;   
+        left: 30px;
+        font-size: 100px;
+    }
+    .desc-buttons  button{
+        width: 100px;
+        margin: 3px;
+    }
+    #clos_btn{
+        top:-110px !important;
+        left: 600px;
+     }
+}
+@media (max-width:670px) {
+    .vl{
+        display: none;
+    }
+    #list-show{
+        display: inline;
+    }
+    .user-actions{
+        width: 100px;
+        margin-left: 30%;
+    }
+    .user-actions img{
+        margin: 0px;
+        
+    }
+    .nav-links{
+        display: none;
+        position: absolute;
+        top: 100%;
+        width: 80%;
+        height: auto ;
+        background-color: rgba(0, 0, 0, 0.843);
+        border-radius: 5px;
+        left: 10%;
+        color: white !important;
+         /* font-size: 300px; */
+
+        /* padding: 50px 50px; */
+        /* border: 2px solid white; */
+        text-align: center;
+    }
+    .nav-links a{
+         color: white !important;
+         font-size: large;
+    }
+    .nav-links li{
+       display: block;
+        font-size: larger;
+        color: white !important;
+    }
+    .logo img{
+        height: 30px;
+    }
+    .sub-btn
+    {
+        height: 20px;
+        /* width:80px; */
+    }
+    
+    .carousel-caption {
+        top: 50px;
+    }
+     .carousel-caption #mask-img{
+            display: none;
+        }
+    
+     .outer-trend-card{
+        margin: auto 15px;
+        min-width: 100px;
+        height: 150px ;
+    }
+    .inner-trend-card{
+         font-weight: 500;   
+        left: 30px;
+        font-size: 100px;
+        top: -20px;
+        height: 300px;
+    }
+    h4
+    {
+        font-size: medium;
+    }
+    .trend-card{
+        margin-top: -20px;
+    }
+
+    .container-fluid{
+        margin-left: 0px !important;
+    }
+    .term{
+        display: block;
+         /* float: left; */
+         margin: 0;
+         padding: 0;
+    }
+    .ex_button span{
+        top:0;
+        left: 0;
+
+    }
+    /* .ex_button{
+        float: left;
+    } */
+    /* .ex_button a{
+        display: block;
+        margin: 2px;
+    } */
+   
+    .botom-card td{
+        text-align: start;
+    }
+
+    .img-des
+    {
+        width: 100%;
+    }
+    .btnplay{
+        width: 30%;
+        height: 40px;
+        font-size: xx-small;
+        padding: 0;
+    }
+     .btnplay img{
+        height: 20px;
+     }
+     .btnsub{
+        width: 60%;
+        height: 40px;
+        font-size: xx-small;
+        padding: 0;
+    }
+     .btnsub span{
+        /* display: inline; */
+        width: 30% !important;
+         font-size: xx-small;
+     }
+     .btnsub span img{
+        height: 20px;
+     }
+     .img-des{
+        padding: 10px;
+        padding-top: 50px;
+     }
+     .sub-table td,th{
+        padding: 5px;
+        font-size: small;
+     }
+     #clos_btn{
+        top:-110px !important;
+        left: 300px;
+     }
+}
+
+@media (max-width:500px)
+{
+    #carouselExampleCaptions
+    {
+        margin-top: 50px;
+    }   
+  .carousel-caption {
+        top: 0px;
+    }
+    .action-buttons img{
+        height: 20px;
+        
+    }
+    .action-buttons{
+        font-size: x-small;
+    }
+    .carousel-caption #mask-img,h6{
+        display: none;
+    } 
+}
+@media (max-width:400px) {
+    .vl{
+        display: none;
+    }
+    #list-show{
+        display: inline;
+    }
+    .user-actions{
+        width: 100px;
+        margin-left: 30%;
+    }
+    .user-actions img{
+        margin: 0px;
+    }
+    .nav-links{
+        display: none;
+    }
+    .logo img{
+        height: 20px;
+    }
+    .sub-btn
+    {
+        height: 20px;
+        /* width:80px; */
+    }
+    .bottom-card th,td{
+        text-align: start;
+    }
+    .ex_button p{
+        display: block;
+    }
+    .str{
+        margin: 20px;
+    }
+    .bottombar
+    {
+        height: 230vh;
+    }
+      .sub-table td,th{
+        padding: 5px;
+        font-size: xx-small;
+        
+     }
+       .sub-table th span{
+        padding: 5px;
+        font-size: xx-small;
+        
+     }
+       .sub-table th{
+        padding: 5px;
+        font-size: xx-small;
+        
+     }
+     .sub-table{
+        margin: 2em;
+     }
+     #back-btn{
+        /* padding-left: -30px !important; */
+        left: 10px !important;
+     }
+     #clos_btn{
+        top:-110px !important;
+        left: 250px;
+     }
+      #back-btn2{
+        padding-left: 30px !important;
+     }
+     /* #back-btn img{
+        padding-left: -20px !important;
+     } */
+}

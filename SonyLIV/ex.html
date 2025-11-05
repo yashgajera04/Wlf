@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sony LIV Clone</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://images.slivcdn.com/UI_icons/sonyliv_new_revised_header_logo.png?w=40&q=high"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="responsive.css">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  </head>
+<body>
+    <nav>
+        <div class="logo">
+            <a href="../index.html" style="text-decoration: none;">
+            <img src="https://images.slivcdn.com/UI_icons/sonyliv_new_revised_header_logo.png?w=40&q=high" alt="Logo"
+                height="44.5px" />
+            </a>
+            <button class="sub-btn">Subscribe &gt;</button>
+            <div class="vl"></div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="./Extra Pages/kbc.html">KBC Season 17</a></li>
+            <li id="tvsh">
+                <a href="./Extra Pages/tv_show.html">TV Shows</a>
+                <div class="tv-show">
+                    <div class="maincard">
+                        <div class="head">
+                            <div class="heading">
+                                <h3>All TV Shows &rarr;</h3>
+                            </div>
+                            <div class="othercard" style="left: 700px" id="tv-show-menu">
+                                <button class="active" id="set">SET Shows</button>
+                                <button id="sab">SAB Shows</button>
+                                <button id="marathi">Sony Marathi</button>
+                                <button id="yay">Sony Yay Shows</button>
+                            </div>
+                        </div>
+                        <div class="cards-list">
+                            <div class="tv-show-card"></div>
+                            <div class="tv-show-card"></div>
+                            <div class="tv-show-card"></div>
+                            <div class="tv-show-card"></div>
+                            <div class="tv-show-card"></div>
+                            <div class="tv-show-card"></div>
+                            <div class="tv-show-card" style="position: relative; top: -100px">
+                                <div class="uper_div">
+                                    <p>
+                                        All Set Shows <br />
+                                        &rAarr;
+                                    </p>
+                                    <br />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li id="Sports">
+                <a href="./Extra Pages/sports.html">Sports</a>
+                <div class="sports-show">
+                    <div class="maincard">
+                        <div class="head">
+                            <div class="heading">
+                                <h3>Sports &rarr;</h3>
+                            </div>
+                            <div class="othercard" id="sport-nav-menu">
+                                <button class="active" id="football">Football</button>
+                                <button id="crickets">Cricket</button>
+                                <button id="ufc">UFC</button>
+                                <button id="tennis">Tennis</button>
+                            </div>
+                        </div>
+                        <div class="cards-list">
+                            <div class="sports-show-card"></div>
+                            <div class="sports-show-card"></div>
+                            <div class="sports-show-card"></div>
+                            <div class="sports-show-card"></div>
+                            <div class="sports-show-card"></div>
+                            <div class="sports-show-card"></div>
+                            <div class="sports-show-card" style="position: relative; top: -75px">
+                                <div class="uper_div">
+                                    <p>
+                                        All Football Tournamates <br />
+                                        &rAarr;
+                                    </p>
+                                    <br />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li id="Originals">
+                <a href="./Extra Pages/originals.html">Originals</a>
+            </li>
+            <li id="Movies">
+                <a href="./Extra Pages/movies.html">Movies</a>
+                <div class="Movies">
+                    <div class="maincard">
+                        <div class="head">
+                            <div class="heading">
+                                <h3>Movies &rarr;</h3>
+                            </div>
+                            <div class="othercard" style="left: 700px" id="movies-menu">
+                                <button class="active" id="hindi">Hindi</button>
+                                <button id="english">Engilsh</button>
+                                <button id="tamil">Tamil</button>
+                                <button id="telgu">Telgu</button>
+                            </div>
+                        </div>
+                        <div class="cards-list">
+                            <div class="movies-show-card"></div>
+                            <div class="movies-show-card"></div>
+                            <div class="movies-show-card"></div>
+                            <div class="movies-show-card"></div>
+                            <div class="movies-show-card"></div>
+                            <div class="movies-show-card"></div>
+                            <div class="movies-show-card" style="position: relative; top: -100px">
+                                <div class="uper_div">
+                                    <p>
+                                        All Hindi Movies <br />
+                                        &rAarr;
+                                    </p>
+                                    <br />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li><a href="./Extra Pages/prem.html">Premium</a></li>
+        </ul>
+        <!-- user box -->
+        <div class="user-actions">
+            <img src="../img/serach.svg" alt="" height="26px" id="search_icon" />
+            <div id="user_icon">
+                <img src="../img/user.png" alt="" height="32px" />
+                <button id="list-show"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+              </svg></button>
+                <div class="user_box">
+                    <table class="user_table" role="presentation"
+                        style="width: 100%;  " >
+                        <tr>
+                            <td colspan="2" id="signincl">
+                                <div class="user_head" style="display: flex; align-items: center;">
+                                    <img src="../img/user.png" alt="" height="50px" />
+                                    <div>
+                                        <h6 style="margin: 0">Sign in</h6>
+                                        <p style="margin: 0; color: #a19e9e; font-size: 0.9em">
+                                            a better experience
+                                        </p>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style=" width: 36px">
+                                <img src="./img/set.png" alt="" height="1" />
+                            </td>
+                            <td   > Subscribe  now</td>
+                        </tr>
+                        <tr>
+                            <td >
+                                <hr style="margin: 0" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td   >
+                                <img src="../img/set.png" alt="" height="20" />
+                            </td>
+                            <td   >Activate TV</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <hr style="margin: 0" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td   >
+                                <img src="../img/set.png" alt="" height="20" />
+                            </td>
+                            <td   >Setting &amp; Preference</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <hr style="margin: 0" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td   >
+                                <img src="../img/set.png" alt="" height="20" />
+                            </td>
+                            <td   >Contact Us</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <hr style="margin: 0" />
+                            </td>
+                        </tr>
+                        <tr class="user-opt">
+                            <td   >
+                                <img src="../img/set.png" alt="" height="20" />
+                            </td>
+                            <td   >Chat With us on Whatsapp</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <hr style="margin: 0" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td   >
+                                <img src="../img/set.png" alt="" height="20" />
+                            </td>
+                            <td   >Activate Offer</td>
+                        </tr>
+                    </table>
+                </div>
+               
+            </div>
+             
+        </div>
+    </nav>
+
+    
+
+    <script src="script.js"></script>
+</body>
+</html>
