@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <link rel="stylesheet" href="../responsive.css">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign in</title>
+    <link rel="stylesheet" href="../style.css">
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+     <style>
+        .sigin-box{
+    /* border: 2px solid white; */
+    color: white;
+    justify-self: center;
+    justify-content: center;
+    text-align: center;
+    font-size: smaller;
+    
+}
+.sigin-box p,a{
+    color: gray;
+}
+.sigin-box .log-btn{
+    background-color: #fff;
+    width: 350px;
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+}
+ .input-group {
+      position: relative;
+      width: 100%;
+      margin-bottom: 25px;
+      text-align: left;
+        font-size: 1em;
+    }
+
+    .input-group span {
+      position: absolute;
+      top: 12px;
+      left: 0;
+      color: #aaa;
+      font-size: 1em;
+    }
+
+    .input-group input {
+      width: calc(100% - 40px);
+      margin-left: 35px;
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid #555;
+      outline: none;
+      color: white;
+    
+      padding: 10px 0;
+      transition: 0.3s;
+    }
+
+    .input-group label {
+      position: absolute;
+      left: 35px;
+      top: 12px;
+      color: #888;
+      font-size: 1em;
+      pointer-events: none;
+      transition: 0.3s ease all;
+    }
+
+    .input-group input:focus,
+    .input-group input:valid {
+      border-bottom: 1px solid #fff;
+    }
+
+    .input-group input:focus ~ label,
+    .input-group input:valid ~ label {
+      top: -8px;
+      font-size: 0.8em;
+      color: #fff;
+    }
+
+    .btn {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      background-color: #222;
+      color: #888;
+      font-size: 1em;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #333;
+      color: white;
+    }
+
+#email-card{
+    color: white !important;
+}
+.bg-box{
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+     background-color: #19191aaa;
+     position: absolute;
+     display: none;
+}
+
+  .signin-box {
+        background-color: #0d1b2a;
+        padding: 40px;
+        border-radius: 12px;
+        text-align: center;
+        width: 340px;
+        box-shadow: 0 0 10px rgba(255,255,255,0.05);
+        position: absolute;
+        top: 15%;
+        left: 38%;
+        display: none;
+        z-index: 50;
+    }
+
+    .signin-box h2 {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+        font-weight: bold;
+    }
+
+    .signin-box p {
+        color: #ccc;
+        font-size: 0.9rem;
+        margin-bottom: 25px;
+    }
+
+    button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        padding: 12px;
+        margin-top: 15px;
+        border: none;
+        border: 2px solid #fff;
+        border-radius: 4px;
+        background: transparent;
+        color: white;
+        font-size: 0.95rem;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    button:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+        transform: scale(1.05);
+        transition: transform 0.3s;
+    }
+
+    button img {
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+    }
+
+    .close {
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        color: white;
+        font-size: 24px;
+        cursor: pointer;
+    }
+     </style>
+</head>
+<body>
+    <div class="bg-box"></div>
+    <img id="back-btn2" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGcgaWQ9IkljX0JhY2tBcnJvdyI+CjxwYXRoIGlkPSJWZWN0b3IgKFN0cm9rZSkiIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTEuODk4MSAzLjg3NTU4QzEyLjI0MyA0LjIzMzU0IDEyLjIzMjQgNC44MDMyOSAxMS44NzQ0IDUuMTQ4MTVMNS42OTYzNSAxMS4xSDIwLjI1QzIwLjc0NyAxMS4xIDIxLjE1IDExLjUwMjkgMjEuMTUgMTJDMjEuMTUgMTIuNDk3MSAyMC43NDcgMTIuOSAyMC4yNSAxMi45SDUuNjk2MzdMMTEuODc0NCAxOC44NTE4QzEyLjIzMjQgMTkuMTk2NyAxMi4yNDMgMTkuNzY2NSAxMS44OTgxIDIwLjEyNDRDMTEuNTUzMyAyMC40ODI0IDEwLjk4MzUgMjAuNDkzIDEwLjYyNTYgMjAuMTQ4MUwzLjMyNzEgMTMuMTE2OUMyLjY5MDk0IDEyLjUwNCAyLjY5MDk0IDExLjQ5NiAzLjMyNzEgMTAuODgzMUwxMC42MjU2IDMuODUxODVDMTAuOTgzNSAzLjUwNjk5IDExLjU1MzMgMy41MTc2MiAxMS44OTgxIDMuODc1NThaIiBmaWxsPSJ3aGl0ZSIvPgo8L2c+Cjwvc3ZnPgo=" alt="" style="padding: 2em 4em;">
+    <div class="sigin-box">
+        <h1>Sign in to watch</h1>
+
+        <br><br>
+        <form>
+             <div class="input-group">
+        <span>+91</span>
+        <input type="text" id="mobile" required>
+        <label for="mobile">Enter your Mobile Number</label>
+      </div>
+
+      <button type="submit" class="btn" disabled>Next</button>
+        </form><br>
+        <p>By proceeding you confirm that you are of 18 years or above and accept the <br> <a href="term.html">Terms of Use</a> & <a href="privacy.html">Privacy Policy</a></p>
+        <br><br>
+        <p>Already have an account?</p>
+        <a id="email-card" href="">Sign In via Email ID or Social Media</a>
+    </div>
+
+    <div class="signin-box">
+    <div class="close">&times;</div>
+    <h2>Sign In via Email ID or<br>Social Media</h2>
+    <p>How would you like to Sign In?</p>
+    <button  style="background-color: white; color: black;"><img src="https://cdn-icons-png.flaticon.com/512/561/561127.png"> Log in with Email ID</button>
+    <button><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png"> Continue with Facebook</button>
+    <button><img src="https://cdn-icons-png.flaticon.com/512/300/300221.png"> Continue with Google</button>
+</div>
+
+    <script src="../script.js"></script>
+    <script>
+        $(document).ready(()=>{
+            $("#back-btn2").click(()=>{
+                window.history.back();
+            })
+          $("#email-card").click((e)=>{ 
+                e.preventDefault();      
+                $(".signin-box").toggle(); 
+                $(".bg-box").toggle();
+            })
+             $(".close").click(()=>{
+                $(".signin-box").toggle();
+                $(".bg-box").toggle();
+            })
+        })
+    </script>
+</body>
+</html>

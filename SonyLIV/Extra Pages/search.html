@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search</title>
+    <style>
+        body{
+            background-color: black;
+            padding: 4em;
+        }
+        .ser_box{
+            width: 100%;
+            height: auto;
+        }
+        .ser_box input{
+            height: 0.5em;
+            width: 90%;
+            padding: 1.5em;
+            border-radius: 200px;
+            text-decoration: none;
+            border: none;
+             font-size: large;
+        }
+        ::placeholder{
+            font-size: large;
+        }
+        .ser_box img{
+            cursor: pointer;
+            position: relative;
+            left: 3.5em;
+            top: -2.5em;
+            height: 25px;
+        }
+        h3{
+            color: aliceblue;
+            margin: 0.5em;
+            padding: 0.5em 0.5em;
+            padding-left: 0;
+            font-size: larger;
+        }
+        /* .card-box{
+            display: flex;
+        } */
+        .card-regi{
+            /* position: relative; */
+            /* display: flex; */
+            float: left;
+            width:160px;
+            height: 250px;
+            background:url(https://images.slivcdn.com/videoasset_images/gullak_26june_portrait_thumb.jpg?h=494&w=344&q=high); 
+            background-size: cover;
+            border-radius: 10px;
+            margin: 0.3em;
+        }
+        .card-regi:hover
+        {
+            transform: scale(1.1);
+            transition: transform 0.2s;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="../responsive.css">
+
+</head>
+<body>
+    <div class="ser_box">
+        <form action="">
+            <input type="text" placeholder="Search for movies,shows,sports etc ">
+            <img id="clos_btn" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxOSIgaGVpZ2h0PSIxOSIgdmlld0JveD0iMCAwIDE5IDE5Ij4KICAgIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBvcGFjaXR5PSIuOCI+CiAgICAgICAgPGcgc3Ryb2tlPSIjRkZGIiBzdHJva2Utd2lkdGg9IjEuNjQ3Ij4KICAgICAgICAgICAgPGc+CiAgICAgICAgICAgICAgICA8Zz4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNMTcuMDc1IDBMMCAxNy4wNzVNMCAwTDE3LjA3NSAxNy4wNzUiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0xMTI1IC03MCkgdHJhbnNsYXRlKDQ1IDQwKSB0cmFuc2xhdGUoMTA4MSAzMSkiLz4KICAgICAgICAgICAgICAgIDwvZz4KICAgICAgICAgICAgPC9nPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+Cg==" alt="" >
+        </form>
+        <br><br>
+        <h3>Popular Searches</h3>
+        <div class="card-box">
+            
+        </div>
+    </div>
+
+    <script>
+        const cardbox = document.getElementsByClassName("card-box")[0]
+        for (let i = 0; i < 18; i++) {
+              cardbox.innerHTML +='<div class="card-regi"></div>';
+        }
+        $(document).ready(function(){
+            $("#clos_btn").click(() =>{window.history.back();
+                
+            })
+        //    $(".card-regi").click(()=>{
+        //      window.location.href = "./playvideo.html";
+        //    })
+        })
+    </script>
+    <script src="../script.js"></script>
+</body>
+</html>

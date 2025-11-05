@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../responsive.css">
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+      <style>
+
+        body{
+            color: white !important;
+        }
+        
+
+        .container {
+            max-width: 600px;
+            margin: 4em auto;
+            width: 100%;
+            justify-content: center;
+            justify-items: center;
+        }
+          h1 {
+      text-align: center;
+      margin: 40px 0;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .section {
+      margin: 30px auto;
+      max-width: 900px;
+    }
+
+    .section h2 {
+      color: #ffb400;
+      font-size: 18px;
+      margin-bottom: 15px;
+    }
+
+    .faq-item {
+      background-color: #1f1f1f;
+      border-radius: 6px;
+      margin-bottom: 10px;
+      overflow: hidden;
+    }
+
+    .faq-question {
+      background: #262626;
+      color: #fff;
+      padding: 15px 20px;
+      cursor: pointer;
+      font-weight: bold;
+      border: none;
+      width: 100%;
+      text-align: left;
+      font-size: 15px;
+      position: relative;
+    }
+
+    .faq-question::after {
+      content: "+";
+      position: absolute;
+      right: 20px;
+      font-size: 20px;
+      transition: 0.3s;
+    }
+
+    .faq-question.active::after {
+      content: "-";
+    }
+
+    .faq-answer {
+      background-color: #1f1f1f;
+      padding: 0 20px;
+      max-height: 0;
+      overflow: hidden;
+      transition: all 0.4s ease;
+      font-size: 14px;
+      color: #ccc;
+    }
+
+    .faq-answer a {
+      color: #4fa3ff;
+      text-decoration: none;
+    }
+
+    .faq-answer a:hover {
+      text-decoration: underline;
+    }
+
+    .faq-answer.open {
+      padding: 15px 20px;
+      max-height: 300px;
+    }
+        </style>
+</head>
+<body>
+     <!-- Navbar -->
+      <nav>
+        <div class="logo">
+            <a href="../index.html" style="text-decoration: none;">
+            <img src="https://images.slivcdn.com/UI_icons/sonyliv_new_revised_header_logo.png?w=40&q=high" alt="Logo"
+                height="44.5px" />
+            </a>
+            <button class="sub-btn">Subscribe &gt;</button>
+            <div class="vl"></div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="./kbc.html">KBC Season 17</a></li>
+            <li id="tvsh">
+                <a href="./tv_show.html">TV Shows</a>
+                <div class="tv-show">
+                    <div class="maincard">
+                        <div class="head">
+                            <div class="heading">
+                                <h3>All TV Shows &rarr;</h3>
+                            </div>
+                            <div class="othercard" style="left: 700px" id="tv-show-menu">
+                                <button class="active" id="set">SET Shows</button>
+                                <button id="sab">SAB Shows</button>
+                                <button id="marathi">Sony Marathi</button>
+                                <button id="yay">Sony Yay Shows</button>
+                            </div>
+                        </div>
+                        <div class="cards-list">
+                            <div class="tv-show-card"></div>
+                            <div class="tv-show-card"></div>
+                            <div class="tv-show-card"></div>
+                            <div class="tv-show-card"></div>
+                            <div class="tv-show-card"></div>
+                            <div class="tv-show-card"></div>
+                            <div class="tv-show-card" style="position: relative; ">
+                                <div class="uper_div">
+                                    <p>
+                                        All Set Shows <br />
+                                        &rAarr;
+                                    </p>
+                                    <br />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li id="Sports">
+                <a href="./sports.html">Sports</a>
+                <div class="sports-show">
+                    <div class="maincard">
+                        <div class="head">
+                            <div class="heading">
+                                <h3>Sports &rarr;</h3>
+                            </div>
+                            <div class="othercard" id="sport-nav-menu">
+                                <button class="active" id="football">Football</button>
+                                <button id="crickets">Cricket</button>
+                                <button id="ufc">UFC</button>
+                                <button id="tennis">Tennis</button>
+                            </div>
+                        </div>
+                        <div class="cards-list">
+                            <div class="sports-show-card"></div>
+                            <div class="sports-show-card"></div>
+                            <div class="sports-show-card"></div>
+                            <div class="sports-show-card"></div>
+                            <div class="sports-show-card"></div>
+                            <div class="sports-show-card"></div>
+                            <div class="sports-show-card" style="position: relative;  ">
+                                <div class="uper_div">
+                                    <p>
+                                        All Football Tournamates <br />
+                                        &rAarr;
+                                    </p>
+                                    <br />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li id="Originals">
+                <a href="./originals.html">Originals</a>
+            </li>
+            <li id="Movies">
+                <a href="./movies.html">Movies</a>
+                <div class="Movies">
+                    <div class="maincard">
+                        <div class="head">
+                            <div class="heading">
+                                <h3>Movies &rarr;</h3>
+                            </div>
+                            <div class="othercard" style="left: 700px" id="movies-menu">
+                                <button class="active" id="hindi">Hindi</button>
+                                <button id="english">Engilsh</button>
+                                <button id="tamil">Tamil</button>
+                                <button id="telgu">Telgu</button>
+                            </div>
+                        </div>
+                        <div class="cards-list">
+                            <div class="movies-show-card"></div>
+                            <div class="movies-show-card"></div>
+                            <div class="movies-show-card"></div>
+                            <div class="movies-show-card"></div>
+                            <div class="movies-show-card"></div>
+                            <div class="movies-show-card"></div>
+                            <div class="movies-show-card" style="position: relative;  ">
+                                <div class="uper_div">
+                                    <p>
+                                        All Hindi Movies <br />
+                                        &rAarr;
+                                    </p>
+                                    <br />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li><a href="./prem.html">Premium</a></li>
+        </ul>
+        <!-- user box -->
+         <div class="user-actions">
+            <img src="../img/serach.svg" alt="" height="26px" id="search_icon" />
+            <div id="user_icon">
+                <img src="../img/user.png" alt="" height="32px" />
+                <button id="list-show"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+              </svg></button>
+                <div class="user_box">
+                    <table class="user_table" role="presentation"
+                        style="width: 100%;  " >
+                        <tr>
+                            <td colspan="2" id="signincl">
+                                <div class="user_head" style="display: flex; align-items: center;">
+                                    <img src="../img/user.png" alt="" height="50px" />
+                                    <div>
+                                        <h6 style="margin: 0">Sign in</h6>
+                                        <p style="margin: 0; color: #a19e9e; font-size: 0.9em">
+                                            a better experience
+                                        </p>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style=" width: 36px">
+                                <img src="./img/set.png" alt="" height="1" />
+                            </td>
+                            <td   > Subscribe  now</td>
+                        </tr>
+                        <tr>
+                            <td >
+                                <hr style="margin: 0" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td   >
+                                <img src="../img/set.png" alt="" height="20" />
+                            </td>
+                            <td   >Activate TV</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <hr style="margin: 0" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td   >
+                                <img src="../img/set.png" alt="" height="20" />
+                            </td>
+                            <td   >Setting &amp; Preference</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <hr style="margin: 0" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td   >
+                                <img src="../img/set.png" alt="" height="20" />
+                            </td>
+                            <td   >Contact Us</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <hr style="margin: 0" />
+                            </td>
+                        </tr>
+                        <tr class="user-opt">
+                            <td   >
+                                <img src="../img/set.png" alt="" height="20" />
+                            </td>
+                            <td   >Chat With us on Whatsapp</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <hr style="margin: 0" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td   >
+                                <img src="../img/set.png" alt="" height="20" />
+                            </td>
+                            <td   >Activate Offer</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="container">
+<h1>Frequently Asked Questions</h1>
+
+  <div class="section">
+    <h2>Section I - Sign in & Register</h2>
+
+    <div class="faq-item">
+      <button class="faq-question">Q1. What is the URL of Sony LIV?</button>
+      <div class="faq-answer">
+        <p>Please access Sony LIV at <a href="https://www.sonyliv.com" target="_blank">https://www.sonyliv.com/</a></p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">Q2. How can I sign in / register for Sony LIV?</button>
+      <div class="faq-answer">
+        <p>You can sign in using your mobile number or email on the Sony LIV app or website.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">Q3. Will my account work outside my country?</button>
+      <div class="faq-answer">
+        <p>Currently, Sony LIV services are available only within India and select regions.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">Q4. How do I link my LIV account to my TV App?</button>
+      <div class="faq-answer">
+        <p>Open Sony LIV on your TV, go to Sign In, and enter the code displayed on your TV screen on <a href="https://www.sonyliv.com/device/activate" target="_blank">sonyliv.com/device/activate</a>.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Section II - Platform Support</h2>
+
+    <div class="faq-item">
+      <button class="faq-question">Q1. What are the minimum versions / device model supported by Sony LIV application?</button>
+      <div class="faq-answer">
+        <p>Android 5.0 or above, iOS 12 or above are required for Sony LIV app compatibility.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">Q2. Why are Sony LIV app updates not available for Samsung TV models 2017 or older?</button>
+      <div class="faq-answer">
+        <p>Older Samsung TV models are not supported due to system limitations and app performance requirements.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Section III - Billing &amp; Subscriptions</h2>
+
+    <div class="faq-item">
+      <button class="faq-question">Q1. How do I subscribe to Sony LIV?</button>
+      <div class="faq-answer">
+        <p>You can subscribe on the Sony LIV website or via the mobile app. Choose a plan, provide payment details (credit/debit card, UPI, or supported wallets) and confirm the purchase.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">Q2. How can I cancel my subscription?</button>
+      <div class="faq-answer">
+        <p>Go to Account &gt; Subscriptions in the app or website and select Cancel. Your subscription will remain active until the end of the current billing cycle.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">Q3. Do you offer refunds?</button>
+      <div class="faq-answer">
+        <p>Refunds depend on the payment method and local policies. In most cases, refunds are handled on a case-by-case basis — contact support with your order details for assistance.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">Q4. What payment methods are accepted?</button>
+      <div class="faq-answer">
+        <p>We accept major credit/debit cards, UPI, and selected mobile wallet providers. Available options may vary by country.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Section IV - Playback &amp; Troubleshooting</h2>
+
+    <div class="faq-item">
+      <button class="faq-question">Q1. Why does the video buffer or stutter?</button>
+      <div class="faq-answer">
+        <p>Buffering usually indicates a slow or unstable internet connection. Try switching to a faster network, lowering the playback quality in the player settings, or restarting your router.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">Q2. Subtitles are not appearing — how do I enable them?</button>
+      <div class="faq-answer">
+        <p>During playback, open the subtitles/CC menu in the player and enable the desired language. If subtitles are missing for a title, they may not be available for that content.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">Q3. The app crashes or shows an error — what should I do?</button>
+      <div class="faq-answer">
+        <p>Try clearing the app cache, updating to the latest app version, or reinstalling the app. If the issue persists, note the error message and contact support with device details.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">Q4. How can I improve video quality?</button>
+      <div class="faq-answer">
+        <p>Ensure you have a stable, high-speed connection and check player quality settings. On some plans, higher-quality streams may require a premium subscription.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Section V - Plans &amp; Offers</h2>
+
+    <div class="faq-item">
+      <button class="faq-question">Q1. What is the difference between plans?</button>
+      <div class="faq-answer">
+        <p>Plans vary by price, streaming quality, number of simultaneous devices, and availability of premium content. Check the Subscribe page for current plan details and features.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">Q2. Do you run promotional offers or discount codes?</button>
+      <div class="faq-answer">
+        <p>Yes — promotional offers and voucher codes are offered periodically. Apply codes at checkout. Terms and validities differ per offer.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">Q3. Is there a free trial available?</button>
+      <div class="faq-answer">
+        <p>Free trial availability changes over time and may be region-specific. Check the Subscribe page or promotional banners for active trials.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Section VI - Contact &amp; Support</h2>
+
+    <div class="faq-item">
+      <button class="faq-question">Q1. How do I contact Sony LIV support?</button>
+      <div class="faq-answer">
+        <p>You can contact us via the Contact Us page, in-app chat, or by email. For account/payment issues, include your account email/phone and transaction details for faster resolution.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">Q2. What are the typical support response times?</button>
+      <div class="faq-answer">
+        <p>Response times vary by channel and volume. In-app chat and ticket responses are typically faster; urgent issues are prioritized where possible.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">Q3. How do I report inappropriate content?</button>
+      <div class="faq-answer">
+        <p>Use the Report option on the content page or contact support with the title, timestamp and reason. Our team will review the report and take action if needed.</p>
+      </div>
+    </div>
+  </div>
+
+    </div>
+
+
+
+
+     <!-- bottombar -->
+    <div class="bottombar">
+      <!-- cards -->
+      <table class="bottom-card">
+        <tr>
+          <th>Top Shows</th>
+        </tr>
+        <tr>
+          <td><a href="">Bade Ache Lagte Hain</a></td>
+        </tr>
+        <tr>
+          <td><a href="">Super Dancer</a></td>
+        </tr>
+        <tr>
+          <td><a href="">Chakravarti Samrat Prithviraj Chauhan</a></td>
+        </tr>
+        <tr>
+          <td><a href="">Ufff Yeh Love Hai Mushkil</a></td>
+        </tr>
+        <tr>
+          <td><a href="">CID</a></td>
+        </tr>
+        <tr>
+          <td><a href="">Taarak Mehta Ka Ooltah Chashmah</a></td>
+        </tr>
+        <tr>
+          <td><a href="">Pushpa Impossible</a></td>
+        </tr>
+      </table>
+      <table class="bottom-card">
+        <tr>
+          <th>Sony LIV Originals</th>
+        </tr>
+        <tr>
+          <td><a href="">Scam 1992 The Harshad Mehta Story</a></td>
+        </tr>
+        <tr>
+          <td><a href="">Maharani</a></td>
+        </tr>
+        <tr>
+          <td><a href="">Rocket Boys</a></td>
+        </tr>
+        <tr>
+          <td><a href="">Scam 2003 The Telgi Story</a></td>
+        </tr>
+        <tr>
+          <td><a href="">Gullak</a></td>
+        </tr>
+        <tr>
+          <td><a href="">Undekhi</a></td>
+        </tr>
+      </table>
+      <table class="bottom-card">
+        <tr>
+          <th>New on Sports</th>
+        </tr>
+        <tr>
+          <td><a href="">UEFA Champions League 2025/26 European </a></td>
+        </tr>
+        <tr>
+          <td><a href="">Qualifiers for the 2026 FIFA</a></td>
+        </tr>
+        <tr>
+          <td><a href="">World Cup</a></td>
+        </tr>
+        <tr>
+          <td><a href="">UEFA Europa League 2025/26 UFC</a></td>
+        </tr>
+        <tr>
+          <td><a href="">UFC</a></td>
+        </tr>
+      </table>
+      <table class="bottom-card">
+        <tr>
+          <th>New On LIV</th>
+        </tr>
+        <tr>
+          <td><a href="">Mirage</a></td>
+        </tr>
+        <tr>
+          <td><a href="">13th: Some Lessons Aren't Taught In</a></td>
+        </tr>
+        <tr>
+          <td><a href="">Classrooms</a></td>
+        </tr>
+        <tr>
+          <td><a href="">The Chronicles of the 4.5 Gang</a></td>
+        </tr>
+        <tr>
+          <td><a href="">Court Kacheri</a></td>
+        </tr>
+        <tr>
+          <td><a href="">Court Kacheri</a></td>
+        </tr>
+      </table>
+      <table class="bottom-card">
+        <tr>
+          <th>Popular Categories</th>
+        </tr>
+        <tr>
+          <td><a href="">LIV Exclusives</a></td>
+        </tr>
+        <tr>
+          <td><a href=""> LIV Originals</a></td>
+        </tr>
+        <tr>
+          <td><a href="">Sports</a></td>
+        </tr>
+        <tr>
+          <td><a href="">Movies</a></td>
+        </tr>
+        <tr>
+          <td><a href="">TV Shows</a></td>
+        </tr>
+      </table>
+      <table class="bottom-card">
+        <tr>
+          <th>Sports</th>
+        </tr>
+        <tr>
+          <td><a href="">Football</a></td>
+        </tr>
+        <tr>
+          <td><a href="">Tennis</a></td>
+        </tr>
+        <tr>
+          <td><a href="">Cricket</a></td>
+        </tr>
+        <tr>
+          <td><a href="">UFC</a></td>
+        </tr>
+      </table>
+
+      <div class="ex-bottom-tab">
+        <div class="term">
+          <a href="">Terms of Use</a> • <a href=""> Privacy Policy </a> •
+          <a href="">FAQs</a> • <a href=""> Contact Us </a> •
+          <a href=""> Advertise With Us </a> •
+          <a href="">Content Redressal Mechanism </a> • 3.6.31 <br /><br />
+          <p>© 2025 Sony Pictures Networks India Pvt. Ltd.</p>
+        </div>
+        <div class="ex_button">
+          <div class="str">
+          <a href=""
+            ><img
+              src="data:image/png;base64,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"
+              alt=""
+          /></a>
+          <a href=""
+            ><img
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIgAAAAoCAMAAAASeEKOAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAABgUExURUdwTK+vr////zExMaenp6enp6mpqaenp6enp6enp5qamjo6OouLi66urqWlpff397q6ujQ0NEFBQU5OTmxsbHV1derq6sXFxWFhYdHR0ZOTk93d3X19fVlZWYWFhUdHRzuVvdQAAAAKdFJOUwAQ//92zT7jHbAovuqCAAAEGElEQVRYw82YiXLjKBBAvZBsNkLc9yHp//9yG5AvyWN7Jtl1KLtEIdQ89UWLw+FweHsfXto+Pv8+1PZpFX5t0+Nb1YfFL28ygU4+5OtB8PR5+Cv9AA6s3g//jD8BhHzcAZFWbLxYquUXdpQ7KTO5PdPq3wVZIkIbYaPzWdxcQPHtiLuxoAoYe/ubIDIjFDdjI8VSMAg3eC0SMJnwomVYjGwgxITqdjUZEDt1kDa26Ck0kSwGADEL9IORT4LMCKGwB8EhY5PHbCRXs8Nsltz7WEFIHjzFmg1ZyigEryB9zDqaa0hIkWfsI+ULZoKKJ0FAIQO+DeILHj0WVogpLxItBBEAKR4rsKVlfAkOywYCYwsiNmLr6/MFFoeHo5V8nLl8DoTnvTErCKMgCM8eF+bLELGExbkCkLmCqNGDUUxeQUZR4YDCxBOIxaIQVKx9BCJNSmBAAomXsXLlmmMsNCs8RwOUyiX4nUEWZ5nHg5i5Jm6gDQTGwAQnEONMB8FeWPvANMaBcyBHh4hap1zmvzQ2HzOpek9Z6g+PEkJVzuDCaQb+2YK36mT6BqZTkVgbvPRlbanhazSWJYX7IAVtW7kZU/91QtN8y+H0SzIr3XJw/ZIUL3cKYa/Za6adh2wVMsZoHpU5wnEn9JdAzA6E7POcuC8zcOSia2+gw/eBbPZfjTzn90Mmo5rOp6o9RL/PNBs7JDTHPkYUJI2gzt1lFXmCVwMSqk+YJnmcOFVVyXXglyBqBxK3r6tTf0+BgoD7tSoQyNC1W/cGtEpsmbHuyvUmT7LGpPF1B5shJni5G75xRzJcWybD38kG4lxivHoMPXehDYA0Nb/2KA9gJo9iGV2NP4oij7BjomhMvlL2DiTtQBC9cJOxcnURtKWYgNC0dqfaXUlQC5quO4scaRM1Zq2yIJyT6o7xHsjeSa6qkogCIUOTT7uFImwBrOsiHm2iKW8JOa0Th353hom+RQQoxBTE7+41e9vki+rxmPbP8gVcWE979Jz9llzZOkjsu9V54niULO+BhHtxM6NMofGqpBXEtxdlrf5C40UecEcQ34frpU8syIfapvtlwHa3uUxfddV2aY5X1UwqFGvmJu6C2dahsU0ZLieyZn4nnyieVb7efNVVcC+9VHANeCSLrwuCDyaiBMpVvvRWKyhqUqXhkGgWDvhE9Imsm18sWBn1oELTLf6zb0BuuqpV8hFoaqG4TmDn7sndRddRfcJyxDnK+gSiQTS/LnRu1qxqEKnVeUkMy9W30bDqfh5C9ZHARKqvBfKntVuT5kDF0D8fNBNjK9MELa2yWwXIwgQrjzTyZKPnVMeui4Unq7dnv2v+HOTbv33/Z5A/PJaQYZ7O3fBVEPX+hYOa76zkp88fdHT1+sM8qdNbO1b8Eceb/wKCjYMN0GHnzgAAAABJRU5ErkJggg=="
+              alt=""
+          /></a>
+          </div>
+          <div class="social">
+         <h6>contact us</span></h6>
+          <div class="d">
+          <a href=""
+            ><img
+              src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMzdweCIgaGVpZ2h0PSIzN3B4IiB2aWV3Qm94PSIwIDAgMzcgMzciIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8IS0tIEdlbmVyYXRvcjogc2tldGNodG9vbCA2MS4yICgxMDEwMTApIC0gaHR0cHM6Ly9za2V0Y2guY29tIC0tPgogICAgPHRpdGxlPkRDOTJEMjQ2LTJDNDAtNDhDMi1CRUI3LUQzM0JCRTNGNzJFQzwvdGl0bGU+CiAgICA8ZGVzYz5DcmVhdGVkIHdpdGggc2tldGNodG9vbC48L2Rlc2M+CiAgICA8ZyBpZD0iMTkyMCIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPGcgaWQ9IjAxLVIxOTIwLVNpZ24tSW4tU3RhbmQtQWxvbmUtU2NyZWVuIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtNTUuMDAwMDAwLCAtMTAyMi4wMDAwMDApIiBmaWxsPSIjQjRCNEI0IiBmaWxsLXJ1bGU9Im5vbnplcm8iPgogICAgICAgICAgICA8ZyBpZD0iR3JvdXAtMyIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMC4wMDAwMDAsIDY5NS4wMDAwMDApIj4KICAgICAgICAgICAgICAgIDxnIGlkPSJHcm91cC0yIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSg1NS4wMDAwMDAsIDI4OC4wMDAwMDApIj4KICAgICAgICAgICAgICAgICAgICA8ZyBpZD0iU29jaWFsLUljb25zJyIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMC4wMDAwMDAsIDM5LjAwMDAwMCkiPgogICAgICAgICAgICAgICAgICAgICAgICA8ZyBpZD0iR3JvdXAiPgogICAgICAgICAgICAgICAgICAgICAgICAgICAgPGcgaWQ9ImxpbmtlZEluIj4KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNMzAuMDYyNSwwIEw2LjkzNzUsMCBDMy4xMDc0MjIyMywwIDAsMy4xMDc0MjIyMyAwLDYuOTM3NSBMMCwzMC4wNjI1IEMwLDMzLjg5MjU3NzggMy4xMDc0MjIyMywzNyA2LjkzNzUsMzcgTDMwLjA2MjUsMzcgQzMzLjg5MjU3NzgsMzcgMzcsMzMuODkyNTc3OCAzNywzMC4wNjI1IEwzNyw2LjkzNzUgQzM3LDMuMTA3NDIyMjMgMzMuODkyNTc3OCwwIDMwLjA2MjUsMCBaIE0xMS40NDAyMDUsMzEuNDA3NzUzMSBMNS42OTIzMDc2OSwzMS40MDc3NTMxIEw1LjY1ODk1NTA0LDE0LjE5NzQxNjYgTDExLjQwNjg1MSwxNC4xOTc0MTY2IEwxMS40NDAyMDUsMzEuNDA3NzUzMSBaIE04LjQyMTcyNTEyLDExLjk0NjA2MzMgTDguMzg4MzcxMDQsMTEuOTQ2MDYzMyBDNi41MDk0NjU1LDExLjk0NjA2MzMgNS4yOTc2MjU4NSwxMC42NTA4NDEzIDUuMjk3NjI1ODUsOS4wMzg3NjI3MyBDNS4yOTc2MjU4NSw3LjM4Nzc3MDA4IDYuNTQ4Mzc4MTIsNi4xMzcwMTkyMyA4LjQ2MDYzNzczLDYuMTM3MDE5MjMgQzEwLjM3Mjg5NzMsNi4xMzcwMTkyMyAxMS41NDU4MjMsNy4zODc3NzAwOCAxMS41ODQ3MzU2LDkuMDM4NzYyNzMgQzExLjU4NDczNTYsMTAuNjUwODQxMyAxMC4zNjczMzc0LDExLjk0NjA2MzMgOC40MjE3MjUxMiwxMS45NDYwNjMzIFogTTMxLjM2ODg0MDUsMzEuNDA3NzUzMSBMMjUuNTcwOTEzNSwzMS40MDc3NTMxIEwyNS41NzA5MTM1LDIyLjA1NzY5MjMgQzI1LjU3MDkxMzUsMTkuNzk1MjIyIDI0Ljk3MDU1MjksMTguMjU1NDA4NyAyMi45NDcxMTU0LDE4LjI1NTQwODcgQzIxLjQwMTc0MzUsMTguMjU1NDA4NyAyMC41Njc5MDg3LDE5LjI5NDkyMjIgMjAuMTY3NjY4MywyMC4zMDEwODE3IEMyMC4wMTc1Nzc4LDIwLjY2MjQwOTUgMTkuOTc4NjY2NiwyMS4xNTcxNTIyIDE5Ljk3ODY2NjYsMjEuNjYzMDEwNSBMMTkuOTc4NjY2NiwzMS40MDc3NTMxIEwxNC4xNTI5NDU0LDMxLjQwNzc1MzEgTDE0LjExOTU5MTMsMTQuMTk3NDE2NiBMMTkuOTQ1MzEyNSwxNC4xOTc0MTY2IEwxOS45Nzg2NjY2LDE2LjYyNjY1MyBDMjAuNzIzNTU3NywxNS40NzU5NjE1IDIxLjk2MzE5MTUsMTMuODQ3MjA1OSAyNC45MzE2NDAzLDEzLjg0NzIwNTkgQzI4LjYxMTYyOSwxMy44NDcyMDU5IDMxLjM2MzI4MiwxNi4yNDg2NDgyIDMxLjM2MzI4MiwyMS40MTI4NjA2IEwzMS4zNjMyODIsMzEuNDA3NzUzMSBMMzEuMzY4ODQwNSwzMS40MDc3NTMxIFoiIGlkPSJTaGFwZSI+PC9wYXRoPgogICAgICAgICAgICAgICAgICAgICAgICAgICAgPC9nPgogICAgICAgICAgICAgICAgICAgICAgICA8L2c+CiAgICAgICAgICAgICAgICAgICAgPC9nPgogICAgICAgICAgICAgICAgPC9nPgogICAgICAgICAgICA8L2c+CiAgICAgICAgPC9nPgogICAgPC9nPgo8L3N2Zz4="
+              alt=""
+          /></a>
+          <a href=""
+            ><img
+              src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMzdweCIgaGVpZ2h0PSIzN3B4IiB2aWV3Qm94PSIwIDAgMzcgMzciIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8IS0tIEdlbmVyYXRvcjogc2tldGNodG9vbCA2MS4yICgxMDEwMTApIC0gaHR0cHM6Ly9za2V0Y2guY29tIC0tPgogICAgPHRpdGxlPjE5MzdDQTI4LTZEQUItNDQ2NC04Njg4LTdFMzBGQjJEQjE2MDwvdGl0bGU+CiAgICA8ZGVzYz5DcmVhdGVkIHdpdGggc2tldGNodG9vbC48L2Rlc2M+CiAgICA8ZyBpZD0iMTkyMCIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPGcgaWQ9IjAxLVIxOTIwLVNpZ24tSW4tU3RhbmQtQWxvbmUtU2NyZWVuIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMTEyLjAwMDAwMCwgLTEwMjIuMDAwMDAwKSIgZmlsbD0iI0I0QjRCNCIgZmlsbC1ydWxlPSJub256ZXJvIj4KICAgICAgICAgICAgPGcgaWQ9Ikdyb3VwLTMiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAuMDAwMDAwLCA2OTUuMDAwMDAwKSI+CiAgICAgICAgICAgICAgICA8ZyBpZD0iR3JvdXAtMiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNTUuMDAwMDAwLCAyODguMDAwMDAwKSI+CiAgICAgICAgICAgICAgICAgICAgPGcgaWQ9IlNvY2lhbC1JY29ucyciIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAuMDAwMDAwLCAzOS4wMDAwMDApIj4KICAgICAgICAgICAgICAgICAgICAgICAgPGcgaWQ9Ikdyb3VwIj4KICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxnIGlkPSJJbnN0YWdyYW0iIHRyYW5zZm9ybT0idHJhbnNsYXRlKDU3LjAwMDAwMCwgMC4wMDAwMDApIj4KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNMTAuNDU2NTIxNywwIEM0LjY5MDk4MTQ2LDAgMCw0LjY5MDk4MTQ2IDAsMTAuNDU2NTIxNyBMMCwyNi41NDM0NzgzIEMwLDMyLjMwOTAxODUgNC42OTA5ODE0NiwzNyAxMC40NTY1MjE3LDM3IEwyNi41NDM0NzgzLDM3IEMzMi4zMDkwMTg1LDM3IDM3LDMyLjMwOTAxODUgMzcsMjYuNTQzNDc4MyBMMzcsMTAuNDU2NTIxNyBDMzcsNC42OTA5ODE0NiAzMi4zMDkwMTg1LDAgMjYuNTQzNDc4MywwIEwxMC40NTY1MjE3LDAgWiBNMjguOTU2NTIxNyw2LjQzNDc4MjYxIEMyOS44NDU3MDMzLDYuNDM0NzgyNjEgMzAuNTY1MjE3NCw3LjE1NDI5NjY3IDMwLjU2NTIxNzQsOC4wNDM0NzgyNiBDMzAuNTY1MjE3NCw4LjkzMjY1OTg1IDI5Ljg0NTcwMzMsOS42NTIxNzM5MSAyOC45NTY1MjE3LDkuNjUyMTczOTEgQzI4LjA2NzM0MDIsOS42NTIxNzM5MSAyNy4zNDc4MjYxLDguOTMyNjU5ODUgMjcuMzQ3ODI2MSw4LjA0MzQ3ODI2IEMyNy4zNDc4MjYxLDcuMTU0Mjk2NjcgMjguMDY3MzQwMiw2LjQzNDc4MjYxIDI4Ljk1NjUyMTcsNi40MzQ3ODI2MSBaIE0xOC41LDguODQ3ODI2MDkgQzIzLjgyMjUyMDgsOC44NDc4MjYwOSAyOC4xNTIxNzM5LDEzLjE3NzQ4IDI4LjE1MjE3MzksMTguNSBDMjguMTUyMTczOSwyMy44MjI1MjA4IDIzLjgyMjUyMDgsMjguMTUyMTczOSAxOC41LDI4LjE1MjE3MzkgQzEzLjE3NzQ4LDI4LjE1MjE3MzkgOC44NDc4MjYwOSwyMy44MjI1MjA4IDguODQ3ODI2MDksMTguNSBDOC44NDc4MjYwOSwxMy4xNzc0OCAxMy4xNzc0OCw4Ljg0NzgyNjA5IDE4LjUsOC44NDc4MjYwOSBaIE0xOC41LDEwLjQ1NjUyMTcgQzE0LjA2MzUxOSwxMC40NTY1MjE3IDEwLjQ1NjUyMTcsMTQuMDYzNTE5IDEwLjQ1NjUyMTcsMTguNSBDMTAuNDU2NTIxNywyMi45MzY0ODEgMTQuMDYzNTE5LDI2LjU0MzQ3ODMgMTguNSwyNi41NDM0NzgzIEMyMi45MzY0ODEsMjYuNTQzNDc4MyAyNi41NDM0NzgzLDIyLjkzNjQ4MSAyNi41NDM0NzgzLDE4LjUgQzI2LjU0MzQ3ODMsMTQuMDYzNTE5IDIyLjkzNjQ4MSwxMC40NTY1MjE3IDE4LjUsMTAuNDU2NTIxNyBaIiBpZD0iU2hhcGUiPjwvcGF0aD4KICAgICAgICAgICAgICAgICAgICAgICAgICAgIDwvZz4KICAgICAgICAgICAgICAgICAgICAgICAgPC9nPgogICAgICAgICAgICAgICAgICAgIDwvZz4KICAgICAgICAgICAgICAgIDwvZz4KICAgICAgICAgICAgPC9nPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+"
+              alt=""
+          /></a>
+          <a href=""
+            ><img
+              src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMzdweCIgaGVpZ2h0PSIzN3B4IiB2aWV3Qm94PSIwIDAgMzcgMzciIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8IS0tIEdlbmVyYXRvcjogc2tldGNodG9vbCA2MS4yICgxMDEwMTApIC0gaHR0cHM6Ly9za2V0Y2guY29tIC0tPgogICAgPHRpdGxlPjE4REFEQTlCLUIxRTUtNDg1RS1BQTk1LTQyOUQ1Q0QxMEJERTwvdGl0bGU+CiAgICA8ZGVzYz5DcmVhdGVkIHdpdGggc2tldGNodG9vbC48L2Rlc2M+CiAgICA8ZyBpZD0iMTkyMCIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPGcgaWQ9IjAxLVIxOTIwLVNpZ24tSW4tU3RhbmQtQWxvbmUtU2NyZWVuIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMTY5LjAwMDAwMCwgLTEwMjIuMDAwMDAwKSIgZmlsbD0iI0I0QjRCNCIgZmlsbC1ydWxlPSJub256ZXJvIj4KICAgICAgICAgICAgPGcgaWQ9Ikdyb3VwLTMiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAuMDAwMDAwLCA2OTUuMDAwMDAwKSI+CiAgICAgICAgICAgICAgICA8ZyBpZD0iR3JvdXAtMiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNTUuMDAwMDAwLCAyODguMDAwMDAwKSI+CiAgICAgICAgICAgICAgICAgICAgPGcgaWQ9IlNvY2lhbC1JY29ucyciIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAuMDAwMDAwLCAzOS4wMDAwMDApIj4KICAgICAgICAgICAgICAgICAgICAgICAgPGcgaWQ9Ikdyb3VwIj4KICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxnIGlkPSJmYWNlYm9vayIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTE0LjAwMDAwMCwgMC4wMDAwMDApIj4KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNMzMuNjA5NTM3NCwwIEwzLjM5MDQ2MjYzLDAgQzEuNTQxNjY2NjcsMCAwLDEuNTQxNjY2NjcgMCwzLjM5MDQ2MjYzIEwwLDMzLjYwOTUzNzQgQzAsMzUuNDU4MzMzMyAxLjU0MTY2NjY3LDM3IDMuMzkwNDYyNjMsMzcgTDE4LjUsMzcgTDE4LjUsMjEuNTgzMzMzMyBMMTMuODc1LDIxLjU4MzMzMzMgTDEzLjg3NSwxNi45NTgzMzMzIEwxOC41LDE2Ljk1ODMzMzMgTDE4LjUsMTIuMzMzMzMzMyBDMTguNSw4LjQ3OTE2NjY3IDIwLjA0MTY2NjcsNi4xNjY2NjY2NyAyNC42NjY2NjY3LDYuMTY2NjY2NjcgTDI5LjI5MTY2NjcsNi4xNjY2NjY2NyBMMjkuMjkxNjY2NywxMC43OTE2NjY3IEwyNy4yODYyOTYsMTAuNzkxNjY2NyBDMjUuOTAxMjA0LDEwLjc5MTY2NjcgMjQuNjY2NjY2NywxMi4wMjYyMDQgMjQuNjY2NjY2NywxMy40MTEyOTYgTDI0LjY2NjY2NjcsMTYuOTU4MzMzMyBMMzAuODMzMzMzMywxNi45NTgzMzMzIEwzMC4wNjI1LDIxLjU4MzMzMzMgTDI0LjY2NjY2NjcsMjEuNTgzMzMzMyBMMjQuNjY2NjY2NywzNyBMMzMuNjA5NTM3NCwzNyBDMzUuNDU4MzMzMywzNyAzNywzNS40NTgzMzMzIDM3LDMzLjYwOTUzNzQgTDM3LDMuMzkwNDYyNjMgQzM3LDEuNTQxNjY2NjcgMzUuNDU4MzMzMywwIDMzLjYwOTUzNzQsMCBaIiBpZD0iU2hhcGUiPjwvcGF0aD4KICAgICAgICAgICAgICAgICAgICAgICAgICAgIDwvZz4KICAgICAgICAgICAgICAgICAgICAgICAgPC9nPgogICAgICAgICAgICAgICAgICAgIDwvZz4KICAgICAgICAgICAgICAgIDwvZz4KICAgICAgICAgICAgPC9nPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+"
+              alt=""
+          /></a>
+          <a href=""
+            ><img
+              src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMzdweCIgaGVpZ2h0PSIzN3B4IiB2aWV3Qm94PSIwIDAgMzcgMzciIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8IS0tIEdlbmVyYXRvcjogc2tldGNodG9vbCA2MS4yICgxMDEwMTApIC0gaHR0cHM6Ly9za2V0Y2guY29tIC0tPgogICAgPHRpdGxlPjI0OTI4MzkyLTgyNDEtNDI3My1BNTc1LTBDQ0EwNzk3RDRDRDwvdGl0bGU+CiAgICA8ZGVzYz5DcmVhdGVkIHdpdGggc2tldGNodG9vbC48L2Rlc2M+CiAgICA8ZyBpZD0iMTkyMCIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPGcgaWQ9IjAxLVIxOTIwLVNpZ24tSW4tU3RhbmQtQWxvbmUtU2NyZWVuIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMjI2LjAwMDAwMCwgLTEwMjIuMDAwMDAwKSIgZmlsbD0iI0I0QjRCNCIgZmlsbC1ydWxlPSJub256ZXJvIj4KICAgICAgICAgICAgPGcgaWQ9Ikdyb3VwLTMiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAuMDAwMDAwLCA2OTUuMDAwMDAwKSI+CiAgICAgICAgICAgICAgICA8ZyBpZD0iR3JvdXAtMiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNTUuMDAwMDAwLCAyODguMDAwMDAwKSI+CiAgICAgICAgICAgICAgICAgICAgPGcgaWQ9IlNvY2lhbC1JY29ucyciIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAuMDAwMDAwLCAzOS4wMDAwMDApIj4KICAgICAgICAgICAgICAgICAgICAgICAgPGcgaWQ9Ikdyb3VwIj4KICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxnIGlkPSJ0d2l0dGVyIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxNzEuMDAwMDAwLCAwLjAwMDAwMCkiPgogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik0zNyw0LjczMzM5ODkgQzM1LjYzODk5ODIsNS40NTYwNTUxNSAzNC4xNzU2MTg5LDUuOTQ3NDYxNCAzMi42Mzk5NzQsNi4xNjQyNTczNSBDMzQuMjA1NzI5Miw1LjAzNjkxMzYgMzUuNDEwMTU2MiwzLjI1MTk1NDA1IDM1Ljk3NjIzNzcsMS4xMjczNDM3NSBDMzQuNTEyODU4NSwyLjE2Nzk2ODc1IDMyLjg4Njg4MTEsMi45MjY3NTczNSAzMS4xNTg1Mjk0LDMuMzM4NjcyOCBDMjkuNzczNDM3NSwxLjU2ODE2MzYgMjcuNzk4MTc3MSwwLjQ1NTI3MzkgMjUuNjE4MTY0OCwwLjQ1NTI3MzkgQzIxLjQyNjc1ODYsMC40NTUyNzM5IDE4LjAyNDI1MDksNC41MzgyODEyNSAxOC4wMjQyNTA5LDkuNTY3OTY4NzUgQzE4LjAyNDI1MDksMTAuMjgzMzk4OSAxOC4wOTA0OTQ4LDEwLjk3NzE0ODkgMTguMjIyOTgyNSwxMS42NDE5OTI2IEMxMS45MTE3ODQ2LDExLjI2NjIxMTQgNi4zMTcyMTk2Nyw3LjYzODQ3NjEgMi41Nzc0NzM5NiwyLjEyNDYxMDMgQzEuOTIxMDYxNTgsMy40Njg3NSAxLjU0NzY4ODQyLDUuMDM2OTEzNiAxLjU0NzY4ODQyLDYuNzA2MjUgQzEuNTQ3Njg4NDIsOS44NjQyNTczNSAyLjg4NDYwMzI1LDEyLjY1MzcxMTQgNC45MjYxMDc1NCwxNC4yODY5MTM2IEMzLjY3OTUyNTEzLDE0LjIzNjMyOSAyLjUxMTIzMDA4LDEzLjgzMTY0MTUgMS40ODc0Njc4MywxMy4xNDUxMTc2IEMxLjQ4NzQ2NzgzLDEzLjE4ODQ3NjEgMS40ODc0Njc4MywxMy4yMjQ2MTAzIDEuNDg3NDY3ODMsMTMuMjYwNzQyNiBDMS40ODc0Njc4MywxNy42NzYxNzI4IDQuMTAxMDczODMsMjEuMzYxNzE4NyA3LjU3NTg0NzEzLDIyLjE5Mjc3MzkgQzYuOTM3NSwyMi40MDIzNDM3IDYuMjY5MDQyNTgsMjIuNTE3OTY4NyA1LjU3NjQ5ODE3LDIyLjUxNzk2ODcgQzUuMDg4NzA0MDQsMjIuNTE3OTY4NyA0LjYwNjkzMzIxLDIyLjQ2MDE1NjIgNC4xNDkyNTA5MiwyMi4zNTE3NTczIEM1LjExMjc5MjU4LDI1Ljk3MjI2NjUgNy45MTkxMDg0NiwyOC42MDI3MzUzIDExLjIzNzMwNTUsMjguNjgyMjI2MSBDOC42NDE3NjQ3MSwzMS4xMjQ4MDUxIDUuMzY1NzIzMDQsMzIuNTc3MzQzNyAxLjgxMjY2MjM3LDMyLjU3NzM0MzcgQzEuMTk4NDA1MzMsMzIuNTc3MzQzNyAwLjU5NjE5MTc5MiwzMi41MzM5ODUzIDAsMzIuNDQ3MjY2NSBDMy4zNjAzNTIzMywzNS4wMzQzNzUgNy4zNDcwMDUyMSwzNi41NDQ3MjYxIDExLjYzNDc2NTYsMzYuNTQ0NzI2MSBDMjUuNjAwMDk4LDM2LjU0NDcyNjEgMzMuMjM2MTY1NywyMi42NjI1IDMzLjIzNjE2NTcsMTAuNjIzMDQ3OCBDMzMuMjM2MTY1NywxMC4yMzI4MTI1IDMzLjIyNDEyMDcsOS44MzUzNTExIDMzLjIxMjA3NzIsOS40NDUxMTc2NSBDMzQuNjkzNTIxOCw4LjE1ODc4ODYgMzUuOTgyMjU5NSw2LjU1NDQ5MjY1IDM3LDQuNzMzMzk4OSBaIiBpZD0iU2hhcGUiPjwvcGF0aD4KICAgICAgICAgICAgICAgICAgICAgICAgICAgIDwvZz4KICAgICAgICAgICAgICAgICAgICAgICAgPC9nPgogICAgICAgICAgICAgICAgICAgIDwvZz4KICAgICAgICAgICAgICAgIDwvZz4KICAgICAgICAgICAgPC9nPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+"
+              alt=""
+          /></a>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="../script.js"></script>
+    <script>
+  $(document).ready(function() {
+    $(".faq-question").click(function() {
+      $(this).toggleClass("active");
+      $(this).next().toggleClass("open");
+    });
+  });
+</script>
+
+</body>
+</html>

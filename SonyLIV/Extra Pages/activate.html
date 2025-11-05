@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign in</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../responsive.css">
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+     <style>
+         .sigin-box{
+            /* border: 2px solid white; */
+            color: white;
+            justify-self: center;
+            justify-content: center;
+            text-align: center;
+            font-size: smaller;
+         }
+        .sigin-box p,a{
+        color: gray;
+        }
+
+        .sigin-box .log-btn{
+            background-color: #fff;
+            width: 350px;
+            height: 40px;
+            border: none;
+            border-radius: 5px;
+        }
+     </style>
+</head>
+<body>
+    <img id="back-btn2" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGcgaWQ9IkljX0JhY2tBcnJvdyI+CjxwYXRoIGlkPSJWZWN0b3IgKFN0cm9rZSkiIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTEuODk4MSAzLjg3NTU4QzEyLjI0MyA0LjIzMzU0IDEyLjIzMjQgNC44MDMyOSAxMS44NzQ0IDUuMTQ4MTVMNS42OTYzNSAxMS4xSDIwLjI1QzIwLjc0NyAxMS4xIDIxLjE1IDExLjUwMjkgMjEuMTUgMTJDMjEuMTUgMTIuNDk3MSAyMC43NDcgMTIuOSAyMC4yNSAxMi45SDUuNjk2MzdMMTEuODc0NCAxOC44NTE4QzEyLjIzMjQgMTkuMTk2NyAxMi4yNDMgMTkuNzY2NSAxMS44OTgxIDIwLjEyNDRDMTEuNTUzMyAyMC40ODI0IDEwLjk4MzUgMjAuNDkzIDEwLjYyNTYgMjAuMTQ4MUwzLjMyNzEgMTMuMTE2OUMyLjY5MDk0IDEyLjUwNCAyLjY5MDk0IDExLjQ5NiAzLjMyNzEgMTAuODgzMUwxMC42MjU2IDMuODUxODVDMTAuOTgzNSAzLjUwNjk5IDExLjU1MzMgMy41MTc2MiAxMS44OTgxIDMuODc1NThaIiBmaWxsPSJ3aGl0ZSIvPgo8L2c+Cjwvc3ZnPgo=" alt="" style="padding: 2em 4em;">
+    <div class="sigin-box">
+        <h1>Activate TV</h1>
+        <h4>You must login first to activate TV</h4>
+        <!-- <br><br> -->
+        <button class="log-btn">Login</button>
+    </div>
+
+    <script>
+        $(document).ready(()=>{
+            $("#back-btn2").click(()=>{
+                window.history.back();
+            })
+            $(".log-btn").click(()=>{
+                window.location.href = "signin.html"
+            })
+        })
+    </script>
+</body>
+</html>
